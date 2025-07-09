@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmEase - Empowering Farmers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="logo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" class="scroll-top-btn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <div class="logo-text">Farm<span>Ease</span></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#welcome">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="#weather">Weather</a></li>
+            <li><a href="#storage">Storage</a></li>
+            <li><a href="booking.html">Book Services</a></li>
+            <li class="auth-buttons">
+                <a href="user-profile.html" class="profile-btn"><i class="fas fa-user"></i> My Profile</a>
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="register-btn">Register</a>
+            </li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="welcome" class="welcome-section">
+        <div class="welcome-content">
+            <h1 class="welcome-title">Welcome to FarmEase</h1>
+            <p class="welcome-subtitle">Transforming Agriculture Through Technology</p>
+            <div class="welcome-features">
+                <a href="marketplace.html" style="text-decoration: none; color: inherit;">
+                    <div class="feature">
+                        <i class="fas fa-store"></i>
+                        <h3>Digital Marketplace</h3>
+                    </div>
+                </a>
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Smart Transport</h3>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-warehouse"></i>
+                    <h3>Storage Solutions</h3>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Easy Booking</h3>
+                </div>
+            </div>
+            <div class="welcome-cta-group">
+                <a href="register.html" class="welcome-cta primary-cta">Get Started</a>
+                <a href="login.html" class="welcome-cta secondary-cta">Sign In</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="weather" class="weather-section">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Weather Forecast</h2>
+            <p>Stay informed about weather conditions for better farming decisions</p>
+        </div>
+        <div class="weather-container">
+            <div class="weather-card">
+                <h3>Today's Weather</h3>
+                <div class="weather-icon">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <p class="temperature">28°C</p>
+                <p class="condition">Sunny</p>
+                <div class="weather-details">
+                    <p><i class="fas fa-tint"></i> Humidity: 65%</p>
+                    <p><i class="fas fa-wind"></i> Wind: 12 km/h</p>
+                </div>
+            </div>
+            <div class="weather-card">
+                <h3>Tomorrow's Forecast</h3>
+                <div class="weather-icon">
+                    <i class="fas fa-cloud-sun"></i>
+                </div>
+                <p class="temperature">27°C</p>
+                <p class="condition">Partly Cloudy</p>
+                <div class="weather-details">
+                    <p><i class="fas fa-tint"></i> Humidity: 70%</p>
+                    <p><i class="fas fa-cloud-rain"></i> Rain Chance: 20%</p>
+                </div>
+            </div>
+            <div class="weather-card farming-tips">
+                <h3>Farming Tips</h3>
+                <i class="fas fa-seedling"></i>
+                <div class="recommendations">
+                    <p><i class="fas fa-check"></i> Good conditions for general farming activities</p>
+                    <p><i class="fas fa-check"></i> Water plants early morning or evening</p>
+                    <p><i class="fas fa-check"></i> Ideal time for crop maintenance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Our Services</h2>
+            <p>Comprehensive solutions for modern farming</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-store"></i>
+                <h3>Digital Marketplace</h3>
+                <p>Connect directly with buyers and get the best prices for your crops</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Real-time price updates</li>
+                    <li><i class="fas fa-check"></i> Secure transactions</li>
+                    <li><i class="fas fa-check"></i> Wide buyer network</li>
+                </ul>
+                <a href="marketplace.html" class="cta-button">Start Selling</a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-tractor"></i>
+                <h3>Equipment Rental</h3>
+                <p>Access modern farming equipment without the heavy investment</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Wide range of equipment</li>
+                    <li><i class="fas fa-check"></i> Flexible rental periods</li>
+                    <li><i class="fas fa-check"></i> Maintenance included</li>
+                </ul>
+                <a href="booking.html" class="cta-button">Book Equipment</a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-warehouse"></i>
+                <h3>Storage Solutions</h3>
+                <p>Safe and climate-controlled storage facilities for your harvest</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Temperature controlled</li>
+                    <li><i class="fas fa-check"></i> 24/7 security</li>
+                    <li><i class="fas fa-check"></i> Flexible capacity</li>
+                </ul>
+                <a href="booking.html" class="cta-button">Reserve Storage</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="marketplace" class="section">
+        <h2>Digital Marketplace</h2>
+        <div class="marketplace-grid">
+            <div class="market-card">
+                <img src="images/crops.jpg" alt="Fresh farm crops">
+                <h3>Sell Your Crops</h3>
+                <p>Connect directly with buyers and get the best prices</p>
+                <button class="market-btn">List Product</button>
+            </div>
+            <div class="market-card">
+                <img src="images/transport.jpg" alt="Agricultural transport">
+                <h3>Transportation</h3>
+                <p>Find reliable transport services for your produce</p>
+                <p class="price">Starting from ₹3,500 per trip</p>
+                <button class="market-btn">Book Transport</button>
+            </div>
+            <div class="market-card">
+                <img src="images/storage.jpg" alt="Modern storage facility">
+                <h3>Storage Solutions</h3>
+                <p>Access modern storage facilities near you</p>
+                <p class="price">Starting from ₹5,000 per day</p>
+                <button class="market-btn">Find Storage</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="storage" class="section">
+        <h2>Storage Facilities</h2>
+        <div class="storage-container">
+            <div class="storage-card">
+                <div class="storage-info">
+                    <h3>Central Warehouse</h3>
+                    <p>Capacity: 1000 tons</p>
+                    <p>Available: 600 tons</p>
+                    <p>Temperature Controlled</p>
+                    <button class="storage-btn">Book Space</button>
+                </div>
+            </div>
+            <div class="storage-card">
+                <div class="storage-info">
+                    <h3>Rural Storage Hub</h3>
+                    <p>Capacity: 750 tons</p>
+                    <p>Available: 400 tons</p>
+                    <p>24/7 Security</p>
+                    <button class="storage-btn">Book Space</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2>Our Services</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-tractor"></i>
+                <h3>Equipment Rental</h3>
+                <p>Access modern farming equipment</p>
+                <a href="booking.html?service=equipment" class="feature-link">Book Now</a>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-warehouse"></i>
+                <h3>Storage Solutions</h3>
+                <p>Secure storage for your harvest</p>
+                <a href="booking.html?service=storage" class="feature-link">Book Now</a>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-truck"></i>
+                <h3>Transportation</h3>
+                <p>Reliable transport services</p>
+                <a href="booking.html?service=transport" class="feature-link">Book Now</a>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-user-tie"></i>
+                <h3>Expert Consultation</h3>
+                <p>Professional farming advice</p>
+                <a href="booking.html?service=consultation" class="feature-link">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@farmease.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FarmEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

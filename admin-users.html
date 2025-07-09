@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - FarmEase Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <nav class="admin-sidebar">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>FarmEase Admin</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="admin-dashboard.html"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                <li class="active"><a href="admin-users.html"><i class="fas fa-users"></i>Users</a></li>
+                <li><a href="admin-bookings.html"><i class="fas fa-calendar-check"></i>Bookings</a></li>
+                <li><a href="admin-services.html"><i class="fas fa-tools"></i>Services</a></li>
+                <li><a href="admin-settings.html"><i class="fas fa-cog"></i>Settings</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>User Management</h1>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="userSearch" placeholder="Search users...">
+                    </div>
+                    <div class="admin-profile">
+                        <img src="assets/admin-avatar.png" alt="Admin">
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- User Stats -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <h3>Total Users</h3>
+                        <p id="totalUsers">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-user-plus"></i>
+                    <div class="stat-info">
+                        <h3>New Users (This Month)</h3>
+                        <p id="newUsers">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-user-check"></i>
+                    <div class="stat-info">
+                        <h3>Active Users</h3>
+                        <p id="activeUsers">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h2>Registered Users</h2>
+                    <div class="table-actions">
+                        <button class="filter-btn">
+                            <i class="fas fa-filter"></i>
+                            Filter
+                        </button>
+                        <button class="export-btn">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                </div>
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Farm Type</th>
+                            <th>Registration Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <!-- User rows will be dynamically added here -->
+                    </tbody>
+                </table>
+                <div class="table-footer">
+                    <div class="pagination">
+                        <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+                        <span class="page-info">Page <span id="currentPage">1</span> of <span id="totalPages">1</span></span>
+                        <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- User Details Modal -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>User Details</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <!-- User details will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-users.js"></script>
+</body>
+</html>

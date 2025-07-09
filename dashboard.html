@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmEase Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="logo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <div class="logo-text">Farm<span>Ease</span></div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li class="active">
+                    <a href="#"><i class="fas fa-chart-line"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="booking.html"><i class="fas fa-calendar-plus"></i> New Booking</a>
+                </li>
+                <li>
+                    <a href="admin-dashboard.html"><i class="fas fa-calendar-check"></i> Manage Bookings</a>
+                </li>
+                <li>
+                    <a href="#marketplace"><i class="fas fa-store"></i> Marketplace</a>
+                </li>
+                <li>
+                    <a href="#weather"><i class="fas fa-cloud-sun"></i> Weather</a>
+                </li>
+                <li>
+                    <a href="#storage"><i class="fas fa-warehouse"></i> Storage</a>
+                </li>
+                <li>
+                    <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                </li>
+            </ul>
+            <div class="user-info">
+                <img src="images/farmer-avatar.jpg" alt="User Avatar">
+                <div class="user-details">
+                    <h4>John Farmer</h4>
+                    <p>Premium Member</p>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="messages">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge">5</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="assets/default-avatar.png" alt="User Avatar">
+                        <div class="user-info">
+                            <h3>Sindhu Rathod</h3>
+                            <a href="user-profile.html" class="view-profile-link">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="dashboard-grid">
+                    <!-- Overview Cards -->
+                    <div class="overview-cards">
+                        <div class="card">
+                            <div class="card-icon" style="background: rgba(46, 204, 113, 0.2)">
+                                <i class="fas fa-rupee-sign" style="color: #2ecc71"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Total Revenue</h3>
+                                <p class="number">₹18,75,000</p>
+                                <p class="change positive">+15% from last month</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon" style="background: rgba(52, 152, 219, 0.2)">
+                                <i class="fas fa-shopping-cart" style="color: #3498db"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Active Orders</h3>
+                                <p class="number">45</p>
+                                <p class="change positive">+8% from last week</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon" style="background: rgba(155, 89, 182, 0.2)">
+                                <i class="fas fa-warehouse" style="color: #9b59b6"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Storage Used</h3>
+                                <p class="number">75%</p>
+                                <p class="change negative">-5% capacity left</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon" style="background: rgba(241, 196, 15, 0.2)">
+                                <i class="fas fa-truck" style="color: #f1c40f"></i>
+                            </div>
+                            <div class="card-info">
+                                <h3>Deliveries</h3>
+                                <p class="number">28</p>
+                                <p class="change positive">On schedule</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Section -->
+                    <div class="charts-section">
+                        <div class="chart-container">
+                            <h3>Revenue Analytics</h3>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Crop Distribution</h3>
+                            <canvas id="cropChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>New Order Received</h4>
+                                    <p>Order #12345 - 500kg Rice</p>
+                                    <span class="time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Shipment Delivered</h4>
+                                    <p>Order #12342 delivered successfully</p>
+                                    <span class="time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Payment Received</h4>
+                                    <p>Payment for Order #12340</p>
+                                    <span class="time">1 day ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Booking Section -->
+                    <div class="dashboard-card booking-section">
+                        <div class="card-header">
+                            <h2><i class="fas fa-calendar-check"></i> Quick Book</h2>
+                        </div>
+                        <div class="card-content">
+                            <div class="quick-book-options">
+                                <a href="booking.html?service=equipment" class="quick-book-item">
+                                    <i class="fas fa-tractor"></i>
+                                    <span>Rent Equipment</span>
+                                </a>
+                                <a href="booking.html?service=storage" class="quick-book-item">
+                                    <i class="fas fa-warehouse"></i>
+                                    <span>Book Storage</span>
+                                </a>
+                                <a href="booking.html?service=transport" class="quick-book-item">
+                                    <i class="fas fa-truck"></i>
+                                    <span>Transport</span>
+                                </a>
+                                <a href="booking.html?service=consultation" class="quick-book-item">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>Consultation</span>
+                                </a>
+                            </div>
+                            <div class="recent-bookings">
+                                <h3>Recent Bookings</h3>
+                                <div class="booking-list">
+                                    <div class="booking-item">
+                                        <div class="booking-icon">
+                                            <i class="fas fa-tractor"></i>
+                                        </div>
+                                        <div class="booking-details">
+                                            <h4>Tractor Rental</h4>
+                                            <p>Tomorrow, 9:00 AM</p>
+                                        </div>
+                                        <div class="booking-status pending">
+                                            Pending
+                                        </div>
+                                    </div>
+                                    <div class="booking-item">
+                                        <div class="booking-icon">
+                                            <i class="fas fa-warehouse"></i>
+                                        </div>
+                                        <div class="booking-details">
+                                            <h4>Storage Space</h4>
+                                            <p>Next Week, Full Day</p>
+                                        </div>
+                                        <div class="booking-status confirmed">
+                                            Confirmed
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Management Card -->
+                    <div class="dashboard-card booking-management">
+                        <div class="card-header">
+                            <h3><i class="fas fa-calendar-check"></i> Booking Management</h3>
+                            <a href="admin-dashboard.html" class="view-all-btn">View All</a>
+                        </div>
+                        <div class="card-content">
+                            <div class="booking-stats-grid">
+                                <div class="booking-stat">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div class="stat-details">
+                                        <h4>Total Bookings</h4>
+                                        <p>248</p>
+                                    </div>
+                                </div>
+                                <div class="booking-stat">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="stat-details">
+                                        <h4>Pending</h4>
+                                        <p>12</p>
+                                    </div>
+                                </div>
+                                <div class="booking-stat">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="stat-details">
+                                        <h4>Confirmed</h4>
+                                        <p>230</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quick-actions">
+                                <a href="booking.html" class="action-btn">
+                                    <i class="fas fa-plus"></i>
+                                    New Booking
+                                </a>
+                                <a href="admin-dashboard.html" class="action-btn">
+                                    <i class="fas fa-tasks"></i>
+                                    Manage Bookings
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

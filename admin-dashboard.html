@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmEase Admin - Booking Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Navigation -->
+    <nav class="admin-nav">
+        <div class="logo">
+            <img src="assets/logo.png" alt="FarmEase Logo">
+            <span>FarmEase Admin</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li class="active"><a href="admin-dashboard.html"><i class="fas fa-calendar-check"></i> Bookings</a></li>
+            <li><a href="#users"><i class="fas fa-users"></i> Users</a></li>
+            <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+        <div class="admin-profile">
+            <img src="assets/admin-avatar.png" alt="Admin">
+            <span>Admin</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="admin-header">
+            <h1>Booking Management</h1>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search bookings...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="export-btn"><i class="fas fa-download"></i> Export Data</button>
+            </div>
+        </div>
+
+        <!-- Booking Stats -->
+        <div class="booking-stats">
+            <div class="stat-card">
+                <i class="fas fa-calendar-check"></i>
+                <div class="stat-info">
+                    <h3>Total Bookings</h3>
+                    <p>248</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <div class="stat-info">
+                    <h3>Pending</h3>
+                    <p>12</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-check-circle"></i>
+                <div class="stat-info">
+                    <h3>Confirmed</h3>
+                    <p>230</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-times-circle"></i>
+                <div class="stat-info">
+                    <h3>Cancelled</h3>
+                    <p>6</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Table -->
+        <div class="booking-table-container">
+            <div class="table-header">
+                <div class="table-filters">
+                    <select id="serviceFilter">
+                        <option value="">All Services</option>
+                        <option value="equipment">Equipment Rental</option>
+                        <option value="storage">Storage</option>
+                        <option value="transport">Transport</option>
+                        <option value="consultation">Consultation</option>
+                    </select>
+                    <select id="statusFilter">
+                        <option value="">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                    <input type="date" id="dateFilter">
+                </div>
+                <button class="refresh-btn"><i class="fas fa-sync"></i> Refresh</button>
+            </div>
+            <table class="booking-table">
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Service</th>
+                        <th>Customer</th>
+                        <th>Date & Time</th>
+                        <th>Duration</th>
+                        <th>Status</th>
+                        <th>Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample booking entries -->
+                    <tr>
+                        <td>#BK001</td>
+                        <td>
+                            <div class="service-info">
+                                <i class="fas fa-tractor"></i>
+                                <span>Tractor Rental</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="customer-info">
+                                <img src="assets/user1.jpg" alt="Customer">
+                                <span>John Doe</span>
+                            </div>
+                        </td>
+                        <td>2024-02-20 09:00 AM</td>
+                        <td>4 hours</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td>$200</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="view-btn" title="View Details"><i class="fas fa-eye"></i></button>
+                                <button class="edit-btn" title="Edit Booking"><i class="fas fa-edit"></i></button>
+                                <button class="delete-btn" title="Cancel Booking"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Add more booking entries here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <div class="page-numbers">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <span>...</span>
+                <button>10</button>
+            </div>
+            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <!-- Booking Details Modal -->
+    <div class="modal" id="bookingDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Booking Details</h2>
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <!-- Booking details will be populated here -->
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn">Close</button>
+                <button class="confirm-btn">Update Status</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

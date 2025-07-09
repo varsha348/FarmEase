@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - FarmEase</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <header class="profile-header">
+            <nav class="nav-bar">
+                <a href="dashboard.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Dashboard
+                </a>
+                <div class="nav-actions">
+                    <button class="edit-profile-btn">
+                        <i class="fas fa-edit"></i>
+                        Edit Profile
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Profile Content -->
+        <main class="profile-content">
+            <!-- Profile Overview -->
+            <section class="profile-overview">
+                <div class="profile-image">
+                    <img src="assets/default-avatar.png" alt="Profile Picture" id="profileImage">
+                    <button class="change-photo-btn">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h1 id="userName">User Name</h1>
+                    <p id="userFarmType">Farm Type</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <i class="fas fa-calendar-check"></i>
+                            <span id="totalBookings">0</span>
+                            <p>Bookings</p>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <span id="averageRating">0.0</span>
+                            <p>Rating</p>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-clock"></i>
+                            <span id="memberSince">-</span>
+                            <p>Member Since</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Details -->
+            <section class="profile-details">
+                <div class="details-card">
+                    <h2>Personal Information</h2>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <label>First Name</label>
+                            <p id="firstName">-</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Last Name</label>
+                            <p id="lastName">-</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Email</label>
+                            <p id="userEmail">-</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Phone</label>
+                            <p id="userPhone">-</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Farm Type</label>
+                            <p id="detailedFarmType">-</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Location</label>
+                            <p id="userLocation">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="details-card">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list" id="recentActivity">
+                        <!-- Activity items will be dynamically added here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label for="editFirstName">First Name</label>
+                        <input type="text" id="editFirstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editLastName">Last Name</label>
+                        <input type="text" id="editLastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPhone">Phone</label>
+                        <input type="tel" id="editPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editLocation">Location</label>
+                        <input type="text" id="editLocation" name="location">
+                    </div>
+                    <div class="form-group">
+                        <label for="editFarmType">Farm Type</label>
+                        <select id="editFarmType" name="farmType" required>
+                            <option value="crop">Crop Farming</option>
+                            <option value="dairy">Dairy Farming</option>
+                            <option value="poultry">Poultry Farming</option>
+                            <option value="mixed">Mixed Farming</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="save-btn">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

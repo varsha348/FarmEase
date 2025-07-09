@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketplace - FarmEase</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="logo.css">
+    <link rel="stylesheet" href="marketplace.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <div class="logo-text">Farm<span>Ease</span></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#" class="active">Marketplace</a></li>
+            <li><a href="booking.html">Book Services</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <div class="marketplace-container">
+        <div class="marketplace-header">
+            <h1>Digital Marketplace</h1>
+            <div class="marketplace-actions">
+                <button class="add-listing-btn" onclick="showAddListingModal()">
+                    <i class="fas fa-plus"></i> List Your Crops
+                </button>
+                <div class="search-filter">
+                    <input type="text" id="searchInput" placeholder="Search crops...">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="grains">Grains</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="pulses">Pulses</option>
+                        <option value="spices">Spices</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="listings-grid" id="listingsGrid">
+            <!-- Sample listings -->
+            <div class="listing-card" data-category="grains">
+                <div class="listing-image">
+                    <img src="images/wheat.jpg" alt="Wheat">
+                    <span class="category-tag">Grains</span>
+                </div>
+                <div class="listing-details">
+                    <h3>Premium Quality Wheat</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Punjab, India</p>
+                    <p class="quantity">Quantity: 500 kg</p>
+                    <p class="price">₹2,500 per quintal</p>
+                    <div class="listing-footer">
+                        <button class="contact-btn">Contact Seller</button>
+                        <span class="posted-date">Posted 2 days ago</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="listing-card" data-category="vegetables">
+                <div class="listing-image">
+                    <img src="images/tomatoes.jpg" alt="Tomatoes">
+                    <span class="category-tag">Vegetables</span>
+                </div>
+                <div class="listing-details">
+                    <h3>Fresh Tomatoes</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Maharashtra, India</p>
+                    <p class="quantity">Quantity: 200 kg</p>
+                    <p class="price">₹40 per kg</p>
+                    <div class="listing-footer">
+                        <button class="contact-btn">Contact Seller</button>
+                        <span class="posted-date">Posted 1 day ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Listing Modal -->
+    <div id="addListingModal" class="modal">
+        <div class="modal-content">
+            <h2>List Your Crops</h2>
+            <form id="listingForm">
+                <div class="form-group">
+                    <label for="cropName">Crop Name</label>
+                    <input type="text" id="cropName" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="grains">Grains</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="pulses">Pulses</option>
+                        <option value="spices">Spices</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity (in kg)</label>
+                    <input type="number" id="quantity" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price per unit (₹)</label>
+                    <input type="number" id="price" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="cropImage">Crop Image</label>
+                    <input type="file" id="cropImage" accept="image/*">
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeAddListingModal()" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="submit-btn">List Crop</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="marketplace.js"></script>
+</body>
+</html>
